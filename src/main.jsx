@@ -8,6 +8,7 @@ import {
 import Home from './pages/Home/Home.jsx';
 import About from './pages/About/About';
 import Contact from './pages/Contact/Contact';
+import StudentDitels from './components/StudentDitels';
 
 const router = createBrowserRouter([
   {
@@ -22,6 +23,10 @@ const router = createBrowserRouter([
     path: "/contact",
     element: <Contact></Contact>,
   },
+  {
+    path:'studentditels/:course_id/:course_name',
+    element:<StudentDitels></StudentDitels>
+  }
 ]);
 
 ReactDOM.createRoot(document.getElementById('root')).render(

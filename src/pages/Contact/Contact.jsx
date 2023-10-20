@@ -7,7 +7,8 @@ const Contact = () => {
         <div>
             <TopNav></TopNav>
             <NavBar></NavBar>
-           <h1>Contact</h1>
+      <h1 className='text-center text-2xl'>This is Contact</h1>
+           
         </div>
     );
 };

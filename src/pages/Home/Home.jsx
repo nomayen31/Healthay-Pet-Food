@@ -1,7 +1,7 @@
-import React from "react";
 import StudentCard from "../../components/StudentCard";
 import TopNav from "../../components/TopNav";
 import NavBar from "../../components/NavBar";
+import { key } from "localforage";
 
 const Home = () => {
     const onlineCourses = [
@@ -120,16 +120,17 @@ const Home = () => {
 
         <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 container mx-auto'>
         {
-            onlineCourses.map((student)=>{
+            onlineCourses.map((student, course_id )=>{
                 return(
                     // eslint-disable-next-line react/jsx-key
-                    <StudentCard  course_name={student.course_name} course_id={student.course_id} price={student.price}  details={student.details} image={student.image} ></StudentCard>
+                    <div key={course_id}>
+                      <StudentCard   course_name={student.course_name} course_id={student.course_id} price={student.price}  details={student.details} image={student.image} ></StudentCard>
+                    </div>
                 )
             })
         }
 
         </div>
-        {/* <StudentCard name={name} id={id}></StudentCard> */}
         
         </>
     );
